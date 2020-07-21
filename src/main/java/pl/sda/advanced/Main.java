@@ -3,6 +3,29 @@ package pl.sda.advanced;
 public class Main {
     public static void main(String[] args) {
         createCarsBasic();
+
+        CarOption first = new CarOption();
+        CarOption second = new CarOption();
+
+        first.setOptionPrice(13.0);
+        first.setOptionName("Radio");
+        first.setChosen(true);
+
+        second.setOptionPrice(130.00);
+        second.setOptionName("DiamondRadio");
+        second.setChosen(true);
+
+        CarOption[] tab = new CarOption[2];
+        tab[0] = first;
+        tab[1] = second;
+
+        CarOption [] tab2 = new CarOption[]{first, second};
+        Car car = new Car();
+        car.setModel("Fabia");
+        car.setManufacturer("Skoda");
+        car.setOptions(tab);
+        System.out.println();
+
     }
 
     private static void createCarsBasic() {

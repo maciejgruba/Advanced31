@@ -6,6 +6,21 @@ public class Car {
     private String VIN;
     private String colour;
 
+
+    private CarOption[] options = new CarOption[1];
+
+    public CarOption[] getOptions() {
+        return options;
+    }
+
+    public void setOptions(CarOption[] options) {
+        this.options = options;
+    }
+
+
+
+
+
     public void setModel(String model) {
         this.model = model;
     }
