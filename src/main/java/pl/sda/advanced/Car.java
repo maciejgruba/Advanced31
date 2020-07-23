@@ -12,6 +12,7 @@ public class Car {
 
     public BigDecimal finallyPrice(){
         BigDecimal result = basePrice;
+        //for(int i = 0 ; i <CarOption;i++)
 
 
         return result;
