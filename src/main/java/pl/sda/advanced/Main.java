@@ -3,7 +3,33 @@ package pl.sda.advanced;
 public class Main {
     public static void main(String[] args) {
         createCarsBasic();
+        createCarsWithOptions();
 
+        Person person1 = new Person();
+        Person person2 = new Person();
+
+        person1.setFirstName("Nikolas");
+        person2.setFirstName("Nikolas");
+
+        person1.setLastName("Nowakowski");
+        person2.setLastName("Nowakowskii");
+
+        person1.setId("88091231213");
+        person2.setId("88091231213");
+
+        System.out.println(person1 == person2);
+        System.out.println(person1.equals(person2));
+        System.out.println(person1.hashCode()==person2.hashCode());
+
+
+
+
+
+
+
+    }
+
+    public static void createCarsWithOptions() {
         CarOption first = new CarOption();
         CarOption second = new CarOption();
 
@@ -19,14 +45,14 @@ public class Main {
         tab[0] = first;
         tab[1] = second;
 
-        CarOption [] tab2 = new CarOption[]{first, second};
+        CarOption[] tab2 = new CarOption[]{first, second};
         Car car = new Car();
         car.setModel("Fabia");
         car.setManufacturer("Skoda");
         car.setOptions(tab);
         System.out.println();
-
     }
+
 
     private static void createCarsBasic() {
         Car car = new Car();
