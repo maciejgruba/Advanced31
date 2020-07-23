@@ -1,16 +1,29 @@
 package pl.sda.advanced;
 
-import java.util.Arrays;
-import java.util.Objects;
+import java.math.BigDecimal;
 
 public class Car {
     private String model;
     private String manufacturer;
     private String VIN;
     private String colour;
-
-
     private CarOption[] options = new CarOption[1];
+    private BigDecimal basePrice;
+
+    public BigDecimal finallyPrice(){
+        BigDecimal result = basePrice;
+
+
+        return result;
+    }
+
+    public BigDecimal getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(BigDecimal basePrice) {
+        this.basePrice = basePrice;
+    }
 
     public CarOption[] getOptions() {
         return options;
@@ -19,9 +32,6 @@ public class Car {
     public void setOptions(CarOption[] options) {
         this.options = options;
     }
-
-
-
 
 
     public void setModel(String model) {

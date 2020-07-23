@@ -1,21 +1,23 @@
 package pl.sda.advanced;
 
+import java.math.BigDecimal;
+
 public class Main {
     public static void main(String[] args) {
         createCarsBasic();
         createCarsWithOptions();
         createPerson();
 
+        CarOption radio = new CarOption("Radio- Nemesis", BigDecimal.valueOf(50000));
+        CarOption whipers = new CarOption("Wycieraczki", BigDecimal.valueOf(170));
 
-
-
-
-
-
-
-
+        Car car = new Car();
+        car.setManufacturer("Skoda");
+        car.setModel("Fabia");
+        car.setOptions(new CarOption[]{radio, whipers});
     }
-    public static void createPerson(){
+
+    public static void createPerson() {
         Person person1 = new Person();
         Person person2 = new Person();
 
@@ -30,18 +32,18 @@ public class Main {
 
         System.out.println(person1 == person2);
         System.out.println(person1.equals(person2));
-        System.out.println(person1.hashCode()==person2.hashCode());
+        System.out.println(person1.hashCode() == person2.hashCode());
     }
 
     public static void createCarsWithOptions() {
         CarOption first = new CarOption();
         CarOption second = new CarOption();
 
-        first.setOptionPrice(13.0);
+        first.setOptionPrice(BigDecimal.valueOf(130.0));
         first.setOptionName("Radio");
         first.setChosen(true);
 
-        second.setOptionPrice(130.00);
+        second.setOptionPrice(BigDecimal.valueOf(1300.00));
         second.setOptionName("DiamondRadio");
         second.setChosen(true);
 
