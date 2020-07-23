@@ -4,7 +4,18 @@ public class Main {
     public static void main(String[] args) {
         createCarsBasic();
         createCarsWithOptions();
+        createPerson();
 
+
+
+
+
+
+
+
+
+    }
+    public static void createPerson(){
         Person person1 = new Person();
         Person person2 = new Person();
 
@@ -20,13 +31,6 @@ public class Main {
         System.out.println(person1 == person2);
         System.out.println(person1.equals(person2));
         System.out.println(person1.hashCode()==person2.hashCode());
-
-
-
-
-
-
-
     }
 
     public static void createCarsWithOptions() {

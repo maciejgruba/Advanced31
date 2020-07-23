@@ -41,7 +41,9 @@ public class Person {
     public boolean equals(Object o) {
         Person person = (Person) o;
         return this.id.equals(person.id);
+    }
 
-
+    public int hashCode(){
+        return id.hashCode();
     }
 }

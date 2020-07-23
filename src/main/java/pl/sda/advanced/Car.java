@@ -1,5 +1,8 @@
 package pl.sda.advanced;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Car {
     private String model;
     private String manufacturer;
@@ -55,7 +58,10 @@ public class Car {
         } else {
             return false;
         }
+    }
 
-
+    @Override
+    public int hashCode() {
+        return VIN.hashCode();
     }
 }
