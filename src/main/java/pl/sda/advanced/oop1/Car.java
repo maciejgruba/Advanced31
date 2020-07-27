@@ -1,4 +1,4 @@
-package pl.sda.advanced;
+package pl.sda.advanced.oop1;
 
 import java.math.BigDecimal;
 
@@ -9,6 +9,12 @@ public class Car {
     private String colour;
     private CarOption[] options = new CarOption[1];
     private BigDecimal basePrice;
+    public static int carCounter;
+
+    public Car(){
+        Car.carCounter++;
+        System.out.println("Tworzę  samochód " + Car.carCounter);
+    }
 
     public BigDecimal finallyPrice(){
         BigDecimal result = basePrice;

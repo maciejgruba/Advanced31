@@ -1,4 +1,4 @@
-package pl.sda.advanced;
+package pl.sda.advanced.oop1;
 
 import java.math.BigDecimal;
 
@@ -18,21 +18,21 @@ public class Main {
     }
 
     public static void createPerson() {
-        Person person1 = new Person();
-        Person person2 = new Person();
+        PersonTest personTest1 = new PersonTest();
+        PersonTest personTest2 = new PersonTest();
 
-        person1.setFirstName("Nikolas");
-        person2.setFirstName("Nikolas");
+        personTest1.setFirstName("Nikolas");
+        personTest2.setFirstName("Nikolas");
 
-        person1.setLastName("Nowakowski");
-        person2.setLastName("Nowakowskii");
+        personTest1.setLastName("Nowakowski");
+        personTest2.setLastName("Nowakowskii");
 
-        person1.setId("88091231213");
-        person2.setId("88091231213");
+        personTest1.setId("88091231213");
+        personTest2.setId("88091231213");
 
-        System.out.println(person1 == person2);
-        System.out.println(person1.equals(person2));
-        System.out.println(person1.hashCode() == person2.hashCode());
+        System.out.println(personTest1 == personTest2);
+        System.out.println(personTest1.equals(personTest2));
+        System.out.println(personTest1.hashCode() == personTest2.hashCode());
     }
 
     public static void createCarsWithOptions() {

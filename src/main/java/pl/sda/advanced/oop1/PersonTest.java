@@ -1,6 +1,10 @@
-package pl.sda.advanced;
+package pl.sda.advanced.oop1;
 
-public class Person {
+import java.util.Objects;
+
+// ta klasa jest muttable- poniewaz zawiera settery
+
+public class PersonTest {
     private String firstName;
     private String lastName;
     private int age;
@@ -39,11 +43,21 @@ public class Person {
     }
 
     public boolean equals(Object o) {
-        Person person = (Person) o;
-        return this.id.equals(person.id);
+        PersonTest personTest = (PersonTest) o;
+        return Objects.equals(personTest.id,this.id);
     }
 
     public int hashCode(){
-        return id.hashCode();
+        return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", id='" + id + '\'' +
+                '}';
     }
 }

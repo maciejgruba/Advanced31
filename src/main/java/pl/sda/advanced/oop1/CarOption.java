@@ -1,4 +1,4 @@
-package pl.sda.advanced;
+package pl.sda.advanced.oop1;
 
 import java.math.BigDecimal;
 
