@@ -1,6 +1,8 @@
 package pl.sda.advanced.oop2;
 
-public class Person {
+import java.math.BigDecimal;
+
+public abstract class Person {
     private String firstName;
     private String lastName;
 
@@ -14,6 +16,11 @@ public class Person {
     public String introduceMyself(){
         return "Jestem człowiekiem";
     }
+
+    public abstract BigDecimal getIncome();// metoda abstrakcyjna
+    // nie posiada ciała i wymaga nadpisania
+
+
 
 
 
