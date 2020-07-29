@@ -7,6 +7,7 @@ import pl.sda.advanced.oop2.Worker;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class CollectionsMain {
 
@@ -32,6 +33,12 @@ public class CollectionsMain {
         treeSetBasic();
         planeTreeSet();
         planeHashMap();
+
+        List<String> strings = Arrays.asList(text1, text2, text6, text5);
+        List<String> collect = strings.stream()
+                .filter(e -> e.contains("2"))
+                .collect(Collectors.toList());
+        System.out.println(collect);
 
 
     }
