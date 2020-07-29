@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 public class Pensioner extends Person{
 
-    public Pensioner(String firstName, String lastName) {
-        super(firstName, lastName);
+    public Pensioner(String firstName, String lastName, Countries country) {
+        super(firstName, lastName, country);
     }
 
     @Override

@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 public abstract class Person {
     private String firstName;
     private String lastName;
+    private Countries country;
 
     public String getFirstName() {
         return firstName;
@@ -24,9 +25,10 @@ public abstract class Person {
 
 
 
-    public Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName, Countries country) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.country = country;
     }
 
     @Override
@@ -34,7 +36,7 @@ public abstract class Person {
         return "Person{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", country=" + country +
                 '}';
     }
-
 }

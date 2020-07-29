@@ -1,6 +1,8 @@
 package pl.sda.advanced.oop2;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class OOP2 {
     public static void main(String[] args) {
@@ -8,25 +10,38 @@ public class OOP2 {
         Polymorfizm();
         interfaces();
 
+        Countries poland = Countries.POLAND; // instancja enuma - obiekt Poland
+        System.out.println(poland.name());
+        System.out.println(poland.toString());
+        System.out.println(poland); // toString jest domyslnie odpalany
+
+        Countries[] values = Countries.values();
+        System.out.println(Arrays.toString(values));// wyswietlenie w tablicy
+
+        String polandText = "Poland";
+        Countries countries = Countries.valueOf(polandText.toUpperCase());
+        System.out.println(countries);  // mozna go wylapac ze stringa
+
+
+
     }
 
     private static void interfaces() {
-        ageHolder studentPerson1 = new Student("Jan", "Kowalski", BigDecimal.valueOf(200));
+        ageHolder studentPerson1 = new Student("Jan", "Kowalski", BigDecimal.valueOf(200), Countries.POLAND);
         ageHolder dog = new Dog(5);
 
 
-        ageHolder[] ageHolders = new ageHolder[]{studentPerson1,dog};
+        ageHolder[] ageHolders = new ageHolder[]{studentPerson1, dog};
         for (ageHolder ageHolder : ageHolders) {
             System.out.println(ageHolder.getAge());
         }
     }
 
     private static void Polymorfizm() {
-        Person studentPerson = new Student("Jan", "Kowalski", BigDecimal.valueOf(200));
-        Person workerPerson = new Worker("Kuba", "Nowak", BigDecimal.valueOf(5000));
+        Person studentPerson = new Student("Jan", "Kowalski", BigDecimal.valueOf(200), Countries.POLAND);
+        Person workerPerson = new Worker("Kuba", "Nowak", BigDecimal.valueOf(5000), Countries.POLAND);
         printIncome(studentPerson);
         printIncome(workerPerson);
-
 
 
         Person[] people = new Person[]{studentPerson, workerPerson};
@@ -53,13 +68,13 @@ public class OOP2 {
 //        System.out.println(worker.getIncome());
 //    }
     public static void printIncome(Person person) {
-        System.out.println(person.getIncome());
+        System.out.println(person.getIncome() + "tu");
     }
 
 
     private static void personBasics() {
-        Student student = new Student("Jan", "Kowalski", BigDecimal.valueOf(200));
-        Worker worker = new Worker("Kuba", "Nowak", BigDecimal.valueOf(5000));
+        Student student = new Student("Jan", "Kowalski", BigDecimal.valueOf(200), Countries.POLAND);
+        Worker worker = new Worker("Kuba", "Nowak", BigDecimal.valueOf(5000), Countries.POLAND);
 
         // Person person = new Person("Jakiś", "Człowiek");// nie da sie utworzyc obiektu klasy abstrakcyjnej
         System.out.println(student);

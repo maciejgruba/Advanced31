@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 public class Worker extends Person {
     private BigDecimal moneyFromWork;
-    public Worker(String firstName, String lastName, BigDecimal moneyFromWork) {
-        super(firstName, lastName);
+    public Worker(String firstName, String lastName, BigDecimal moneyFromWork, Countries country) {
+        super(firstName, lastName, country);
         this.moneyFromWork= moneyFromWork;
     }
 
