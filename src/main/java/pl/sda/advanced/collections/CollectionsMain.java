@@ -18,12 +18,13 @@ public class CollectionsMain {
     private static String text5 = "Napis5";
     private static String text6 = "Napis6";
 
-    private static Student student = new Student("Jan","Nowak", BigDecimal.valueOf(200), Countries.POLAND);
+    private static Student student = new Student("Jan", "Nowak", BigDecimal.valueOf(200), Countries.POLAND);
     private static Worker worker = new Worker("Paweł", "Kowalski", BigDecimal.valueOf(5000), Countries.FRANCE);
 
-    private static Plane first = new Plane("Boeing", 12,123);
-    private static Plane second = new Plane("Boeing", 12,123);
-    private static Plane third = new Plane("AirBus", 15,124);
+    private static Plane first = new Plane("Boeing", 12, 123);
+    private static Plane second = new Plane("Boeing", 12, 123);
+    private static Plane third = new Plane("AirBus", 15, 124);
+
     public static void main(String[] args) {
 
         arrayList();
@@ -39,6 +40,13 @@ public class CollectionsMain {
                 .filter(e -> e.contains("2"))
                 .collect(Collectors.toList());
         System.out.println(collect);
+
+// toDo zrobic za pomoca petli
+        List<Plane> allPlanes = Arrays.asList(first, second, third);
+        Map<String, Long> collect1 = allPlanes.stream()
+                .collect(Collectors.groupingBy(plane -> plane.getModel(), Collectors.counting()));
+
+        System.out.println(collect1);
 
 
     }
@@ -76,9 +84,9 @@ public class CollectionsMain {
 
     private static void planeHashSet() {
         Set<Plane> planes = new HashSet<>();
-        Plane first = new Plane("Boeing", 12,123);
-        Plane second = new Plane("Boeing", 12,123);
-        Plane third = new Plane("AirBus", 15,124);
+        Plane first = new Plane("Boeing", 12, 123);
+        Plane second = new Plane("Boeing", 12, 123);
+        Plane third = new Plane("AirBus", 15, 124);
         planes.add(first);
         planes.add(second);
         planes.add(third);
