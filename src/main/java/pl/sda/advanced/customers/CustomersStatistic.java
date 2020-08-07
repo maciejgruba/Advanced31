@@ -23,6 +23,12 @@ public class CustomersStatistic {
         Map<Integer, List<Customer>> salaryMap = collectCustomersUsingSalary();
         System.out.println();
         System.out.println(salaryMap);
+
+        Map<Integer, Long> jakasMapa = collectCustomersWithSalary();
+        System.out.println();
+        System.out.println(jakasMapa);
+
+
     }
 
     public List<Customer> arrayToList() {
@@ -80,5 +86,22 @@ public class CustomersStatistic {
         return Arrays.stream(people)
                 .collect(Collectors.groupingBy(p -> p.getMonthSalary()));
     }
+
+    // 5. Napisz metodę, która zwróci mapę ile jest osób z danymi zarobkami <zarobki, liczba_osób>
+    public static Map<Integer, Long> collectCustomersWithSalary() {
+        return Arrays.stream(people)
+                .collect(Collectors.groupingBy(p -> p.getMonthSalary(), Collectors.counting()));
+    }
+
+    //6. Napisz metodę, która zwróci mapę map <imię,<zarobki, liczba_osób_z_takimi_zarobkami>>
+    //7. Napisz metodę, która zwróci mapę <imię,<suma_zarobków_osób_o_taki_imieniu>>
+
+    // 8. Napisz metodę, która zwróci kolekcję unikalnych imion posortowanych alfabetycznie, ale malejącej kolejności
+
+
 }
+
+
+
+
 
